@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
+
+/*  */
+
+img {
+    display: block;
+}
+
+.kriteria-judul {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.kriteria-judul h2 {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.kriteria-judul span {
+    color: #ff5678;
+}
+
+.kriteria {
+    padding: 20px 0;
+}
+
+.kriteria ul {
+    position: relative;
+}
+
+.kriteria li {
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.kriteria i {
+    position: absolute;
+    font-size: 1.2rem;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.keterangan {
+    text-align: center;
+}
+
+.form-daftar {
+    padding: 30px 0;
+}
+
+.form-judul {
+    margin-bottom: 60px;
+}
+
+.form-judul h2 {
+    font-family: 'Signika Negative', sans-serif;
+    margin-bottom: 40px;
+}
+
+.form-control {
+    margin-bottom: 10px !important;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.btn-daftar {
+    margin-top: 20px;
+}
+
+.card {
+    margin-top: 50px;
+    height: auto;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background: #A3DE83;
+    color: white;
+    width: 100%;
+}
+
+.persegi {
+    width: 65%;
+    height: 50px;
+    margin: 0 auto;
+    background: #FF5D6E;
+    border-radius: 20px;
+    margin-top: -20px;
+    padding-top: 4px;
+}
+
+.persegi p {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.7rem;
+}
+
+.text-lowongan {
+    margin-top: 5px;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+
+.button-ukuran {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+}
+
+.btn-daftar {
+    border: none !important;
+    background: #52a1eb !important;
+}
+
+.img-wrapper {
+    width: 100%;
+}
+
+.img-wrapper img {
+    margin: auto;
+    height: 85px;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 1200px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 55px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 998px) {}
+
+@media only screen and (max-width: 767px) {
+    .persegi {
+        width: 65%;
+        height: 50px;
+        margin: 0 auto;
+        background: #FF5D6E;
+        border-radius: 20px;
+        margin-top: -20px;
+        padding-top: 8px;
+    }
+    .persegi p {
+        text-align: center;
+        font-family: 'Rubik', sans-serif;
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.4rem;
+    }
+    .img-wrapper img {
+        margin: auto;
+        height: 45px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .persegi {
+        width: 85%;
+        height: 50px;
+        margin: 0 auto;
+        background: #FF5D6E;
+        border-radius: 20px;
+        margin-top: -20px;
+        padding-top: 10px;
+    }
+    .persegi p {
+        text-align: center;
+        font-family: 'Rubik', sans-serif;
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+    .img-wrapper img {
+        margin: auto;
+        height: 35px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .persegi {
+        width: 90%;
+        height: 50px;
+        margin: 0 auto;
+        background: #FF5D6E;
+        border-radius: 20px;
+        margin-top: -20px;
+        padding-top: 13px;
+    }
+    .persegi p {
+        text-align: center;
+        font-family: 'Rubik', sans-serif;
+        text-transform: uppercase;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+    .img-wrapper img {
+        margin: auto;
+        height: 28px;
+        object-fit: contain;
+    }
+}

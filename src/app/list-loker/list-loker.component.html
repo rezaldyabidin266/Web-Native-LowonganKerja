@@ -1,0 +1,37 @@
+<section id="job" class="job bg-transparent" (resultLogin)="getLogin($event)">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12">
+                <div class="job-judul">
+                    <!-- <h2>Open Lowongan</h2> -->
+                    <div class="img-wrapper ">
+                        <img class="" src="../../assets/image/judul.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center text-center">
+            <div class="col-lg-12 mb-4">
+                <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="user !== null">
+                    Selamat Datang <strong>{{user}}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4 card-bungkus" *ngFor="let lokerItem of DataLoker">
+                <div class="card" (click)="goKriteria(lokerItem.id,lokerItem.judulLowongan,lokerItem.keterangan)">
+                    <div class="persegi">
+                        <p>{{lokerItem.judulLowongan}}</p>
+                    </div>
+                    <div class="card-body ps-3 pe-3">
+                        <p class="text-lowongan">{{lokerItem.keterangan}}</p>
+                        <div class="button-ukuran text-center">
+                            <button type="button" (click)="goKriteria(lokerItem.id)" class="btn btn-primary btn-daftar btn-mobile pe-4 ps-4 pt-1 pb-1"><i class="fas fa-list fa-sm me-1 mb-1"></i>Daftar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

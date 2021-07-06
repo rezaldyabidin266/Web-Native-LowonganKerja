@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+/*  */
+
+.container {
+    height: auto;
+}
+
+img {
+    display: block;
+}
+
+.card-pengalaman {
+    border: 2px solid #8b8b8b;
+}
+
+.card-history {
+    margin-bottom: 15px;
+    border: 2px solid #8b8b8b;
+}
+
+.card-title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: 1.8rem;
+    font-family: 'Lora', serif;
+}
+
+p strong {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.btn-primary {
+    border: none !important;
+    background: #52a1eb !important;
+}
+
+.form-upload {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form-upload p {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.img-wrapper {
+    width: 100%;
+}
+
+.img-wrapper img {
+    margin: auto;
+    height: 90px;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 1200px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 70px;
+        object-fit: contain;
+    }
+    .form-upload p {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 998px) {}
+
+@media only screen and (max-width: 767px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 55px;
+        object-fit: contain;
+    }
+    .form-upload p {
+        font-size: 1.15rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 40px;
+        object-fit: contain;
+    }
+    .form-upload p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 32px;
+        object-fit: contain;
+    }
+    .form-upload p {
+        font-size: 0.85rem;
+    }
+}

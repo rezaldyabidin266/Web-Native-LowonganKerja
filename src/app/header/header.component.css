@@ -1,0 +1,52 @@
+.navbar .navbar-brand,
+.nav-link {
+    color: black !important;
+    font-weight: 500;
+}
+
+img {
+    display: block;
+}
+
+.bg-custom {
+    background: #A3DE83 !important;
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler i.open,
+.navbar-toggler.collapsed i.close {
+    display: none !important;
+}
+
+.navbar-toggler i.close,
+.navbar-toggler.collapsed i.open {
+    display: block !important;
+}
+
+.dropdown {
+    padding-right: 14px;
+}
+
+.nav-link i.open-drop,
+i.close-drop {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.nav-link i.open-drop,
+.nav-link.show i.close-drop {
+    display: none !important;
+}
+
+.nav-link i.close-drop,
+.nav-link.show i.open-drop {
+    display: block !important;
+}

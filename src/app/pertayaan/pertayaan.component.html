@@ -1,0 +1,136 @@
+<div class="container">
+
+    <div class="row justify-content-md-center">
+        <div class="col-lg-7">
+            <form #f="ngForm">
+                <div *ngFor="let for of dataFor;let i = index" class="baner-pertanyaan">
+                    <label for="" class="pertanyaan">{{for.pertanyaan}}</label>
+                    <div class="">
+                        <!-- Yes OR Not -->
+                        <div *ngIf="for.bentukIsian === 'Yes No Question'">
+                            <div class="form-check" #div1 (change)="getQuest(for.id,$event,for.pertanyaan)">
+                            </div>
+                            <div class="form-check" #div2 (change)="getQuest(for.id,$event,for.pertanyaan)">
+                            </div>
+                        </div>
+
+                        <!-- Paragraf -->
+                        <div *ngIf="for.bentukIsian === 'Paragraf'">
+                            <textarea rows="7" class="form-control" (change)="getTextArea(for.id,$event,for.pertanyaan)"></textarea>
+                        </div>
+
+                        <!-- Nominal -->
+                        <div *ngIf="for.bentukIsian === 'Nominal'">
+                            <input type="text" class="form-control" (change)="getNominal(for.id,$event,for.pertanyaan)" (keyup)="rupiah($event)">
+                        </div>
+
+                        <!-- Simple Text -->
+                        <div *ngIf="for.bentukIsian === 'Simple Text'">
+                            <input type="text" class="form-control" (change)="getSimpleText(for.id,$event,for.pertanyaan)">
+                        </div>
+
+                        <!-- Tanggal -->
+                        <div *ngIf="for.bentukIsian === 'Tanggal'">
+                            <input type="date" class="form-control" (change)="getDate(for.id,$event,for.pertanyaan)" max=" 3000-12-31">
+                        </div>
+
+                        <!-- CheckBox -->
+                        <div *ngIf="for.bentukIsian==='Checkbox'">
+                            <div class="form-check" *ngFor="let pilihan of for.pilihan;">
+                                <input class="form-check-input" type="checkbox" value="{{pilihan}}" (change)="GetStats($event,for.id,for.pertanyaan)" ngModel name="checkbox" id="{{pilihan}}">
+                                <label class="form-check-label" for="{{pilihan}}">
+                            {{pilihan}}
+                        </label>
+                            </div>
+                        </div>
+
+                        <!-- Pilihan Ganda -->
+                        <div *ngIf="for.bentukIsian==='Pilihan Ganda';">
+                            <div class="form-check" *ngFor="let pilihan of for.pilihan;">
+                                <input class="form-check-input" type="radio" ngModel name="jawaban" (change)="getGanda($event,for.id,for.pertanyaan)" [value]="pilihan" id="{{pilihan}}">
+                                <label class="form-check-label" for="{{pilihan}}">
+                              {{pilihan}}
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!sudahRegister">
+                    <button class="btn btn-primary mt-3" (click)="Post()">Submit</button>
+                </div>
+
+            </form>
+
+            <div *ngIf="sudahRegister">
+                <div class="img-wrap-login">
+                    <img src="../../assets/image/imgLogin.png" alt="">
+                </div>
+                <h3 class="text-center">{{textRegister}}</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div class="row justify-content-md-center">
+        <div class="col-lg-6">
+            <form #f="ngForm" class="formPertanyaan">
+                <div class="baner-pertanyaan">
+                    <label class="pertanyaan" for="pertayaan">{{DataPertayaan.pertanyaan}}</label>
+                    Yes OR Not
+                    <div *ngIf="bentukPertayaan === 'Yes No Question';">
+                        <div class="form-check" *ngFor="let or of YesOrNot">
+                            <input class="form-check-input" type="radio" ngModel name="jawaban" [value]="or" id="{{or}}">
+                            <label class="form-check-label" for="{{or}}">
+                              {{or}}
+                            </label>
+                        </div>
+                    </div>
+
+                    Nominal
+                    <div *ngIf="bentukPertayaan === 'Nominal'">
+                        <input type="text" id="pertayaan" class="form-control" ngModel name="nominal" (keyup)="rupiah($event)">
+                    </div>
+
+                    Paragraf
+                    <div *ngIf="bentukPertayaan === 'Paragraf'">
+                        <textarea id="pertayaan" rows="7" class="form-control" ngModel name="jawaban"></textarea>
+                    </div>
+
+                    Simple Text
+                    <div *ngIf="bentukPertayaan === 'Simple Text'">
+                        <input type="text" id="pertayaan" class="form-control" ngModel name="jawaban">
+                    </div>
+                    Tanggal
+                    <div *ngIf="bentukPertayaan === 'Tanggal'">
+                        <input type="date" id="pertayaan" class="form-control" ngModel name="date" max="3000-12-31">
+                    </div>
+
+                    CheckBox
+                    <div *ngIf="bentukPertayaan === 'Checkbox'">
+                        <div class="form-check" *ngFor="let pilihan of Pilihan;">
+                            <input class="form-check-input" type="checkbox" value="{{pilihan}}" (change)="GetStats($event)" ngModel name="checkbox" id="{{pilihan}}">
+                            <label class="form-check-label" for="{{pilihan}}">
+                            {{pilihan}}
+                        </label>
+                        </div>
+                    </div>
+
+                    Pilihan Ganda
+                    <div *ngIf="bentukPertayaan === 'Pilihan Ganda';">
+                        <div class="form-check" *ngFor="let pilihan of Pilihan;">
+                            <input class="form-check-input" type="radio" ngModel name="jawaban" [value]="pilihan" id="{{pilihan}}">
+                            <label class="form-check-label" for="{{pilihan}}">
+                              {{pilihan}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap justify-content-start mt-4">
+                    <button type="button" class="btn btn-primary me-3" (click)="submitSave()" *ngIf="idArray === lastPertayaan"> Submit<i class="fas fa-hand-point-up fa-sm ms-1"></i></button>
+                    <button type="button" class="btn btn-primary me-3" (click)="nextPertayaan($event)" *ngIf="idArray !== lastPertayaan"> {{Lanjut}} <i class="fas fa-hand-point-right fa-sm ms-1"></i></button>
+                    <button type="button" class="btn btn-primary" (click)="backPertayaan()" *ngIf="idArray"><i class="fas fa-hand-point-left fa-sm me-1"></i> Sebelumnya</button>
+                </div>
+            </form>
+        </div>
+    </div> -->

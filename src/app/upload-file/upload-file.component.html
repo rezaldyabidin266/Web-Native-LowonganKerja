@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8">
+            <div class="form-upload">
+                <div class="img-wrapper ">
+                    <img class="" src="../../assets/image/uploadFile.png" alt="">
+                </div>
+                <p>Harap upload foto & Cv anda!</p>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-lg-6">
+            <form action="">
+                <div class="card">
+                    <div class="persegi-upload">
+                        <label for="cv" class="">Foto Pelamar</label>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-1">
+                            <div class="alert alert-success" role="alert" *ngIf="suksesFoto">
+                                Berhasil Upload Foto
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngIf="gagalFoto">
+                                Gagal Upload Foto
+                            </div>
+                            <div class="alert alert-warning" role="alert" *ngIf="formatFoto">
+                                Kesalahan ! Format Foto : ( PNG, JPG, JPEG )
+                            </div>
+                            <div class="progress form-group" *ngIf="progress > 0">
+                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="file" id="foto" class="form-control" (change)="getFileInput($event)">
+                        <p class="text-upload"> * Format Foto ( PNG, JPG, JPEG )</p>
+                        <p class="text-upload-submit"> * Harap upload terlebih dahulu</p>
+                        <button type="submit" class="btn btn-success btn-upload" (click)="postFoto()">Upload Foto <i class="fas fa-upload fa-sm ms-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- CV -->
+                <div class="card">
+                    <div class="persegi-upload">
+                        <label for="cv" class="">Cv Pelamar</label>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-1">
+                            <div class="alert alert-success" role="alert" *ngIf="suksesCv">
+                                Berhasil Upload Cv
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngIf="gagalCv">
+                                Gagal Upload Cv
+                            </div>
+                            <div class="alert alert-warning" role="alert" *ngIf="formatCv">
+                                Kesalahan ! Format Cv : PDF
+                            </div>
+                            <div class="progress form-group" *ngIf="progressCv > 0">
+                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progressCv">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="file" id="cv" class="form-control" (change)="getFileInputCv($event)">
+                        <p class="text-upload"> * Format Cv PDF</p>
+                        <p class="text-upload-submit"> * Harap upload terlebih dahulu</p>
+                        <button type="submit" class="btn btn-success btn-upload" (click)="postCv()">Upload Cv <i class="fas fa-upload fa-sm ms-1"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-next" (click)="nextPage()" routerLink="/addPengalaman">Next Page <i class="fas fa-paper-plane fa-sm ms-1"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <form action="">
+    <div class="banner-upload">
+        <div class="mb-1">
+            <div class="alert alert-success" role="alert" *ngIf="suksesFoto">
+                Berhasil Upload Foto
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="gagalFoto">
+                Gagal Upload Foto
+            </div>
+            <div class="alert alert-warning" role="alert" *ngIf="formatFoto">
+                Kesalahan ! Format Foto : ( PNG, JPG, JPEG )
+            </div>
+            <div class="progress form-group" *ngIf="progress > 0">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
+                </div>
+            </div>
+            <label for="foto" class="form-check-label mb-3">Foto Pelamar</label>
+            <input type="file" id="foto" class="form-control" (change)="getFileInput($event)">
+            <p class="text-upload "> Format Foto ( PNG, JPG, JPEG )</p>
+            <p class="text-upload-submit"> Harap upload terlebih dahulu</p>
+            <button type="submit" class="btn btn-success btn-upload" (click)="postFoto()">Upload Foto <i class="fas fa-upload fa-sm ms-1"></i></button>
+        </div>
+    </div>
+    <div class="banner-upload">
+        <div class="mb-1">
+            <div class="alert alert-success" role="alert" *ngIf="suksesCv">
+                Berhasil Upload Cv
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="gagalCv">
+                Gagal Upload Cv
+            </div>
+            <div class="alert alert-warning" role="alert" *ngIf="formatCv">
+                Kesalahan ! Format Cv : PDF
+            </div>
+            <div class="progress form-group" *ngIf="progressCv > 0">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progressCv">
+                </div>
+            </div>
+            <label for="cv" class="form-check-label mb-3">CV Pelamar</label>
+            <input type="file" id="cv" class="form-control" (change)="getFileInputCv($event)">
+            <p class="text-upload"> Format Cv PDF</p>
+            <p class="text-upload-submit"> Harap upload terlebih dahulu</p>
+            <button type="submit" class="btn btn-success btn-upload" (click)="postCv()">Upload Cv <i class="fas fa-upload fa-sm ms-1"></i></button>
+        </div>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="nextPage()" routerLink="/addPengalaman">Next Page <i class="fas fa-paper-plane fa-sm ms-1"></i></button>
+    </div>
+</form> -->

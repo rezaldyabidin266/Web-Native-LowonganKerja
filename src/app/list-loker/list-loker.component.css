@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Rubik&display=swap');
+
+/*  */
+
+.job {
+    height: auto;
+}
+
+img {
+    display: block;
+}
+
+.card-syarat {
+    margin-top: 50px;
+}
+
+.col-12,
+.col-lg-6 {
+    padding: 0 !important;
+}
+
+.syarat {
+    padding: 40px 0;
+}
+
+.syarat-judul h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.syarat-judul h5 {
+    margin-top: 15px;
+}
+
+.syarat-text {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.syarat-text h3 {
+    margin: 20px 0 15px 0;
+}
+
+.img-wrap {
+    width: 100%;
+}
+
+.img-wrap img {
+    height: 160px;
+    object-fit: cover;
+}
+
+.job {
+    padding: 30px 0;
+}
+
+.job-judul {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.img-wrapper {
+    width: 100%;
+}
+
+.img-wrapper img {
+    margin: auto;
+    height: 120px;
+    object-fit: contain;
+}
+
+.job-judul h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.card {
+    height: 320px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background: #A3DE83;
+    color: white;
+    width: auto;
+}
+
+.persegi {
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+    background: #FF5D6E;
+    border-radius: 20px;
+    margin-top: -20px;
+    padding-top: 4px;
+}
+
+.persegi p {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.7rem;
+}
+
+.card:hover .card-text {
+    color: black;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.card-title {
+    margin-top: 5px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+}
+
+.card-text {
+    text-align: left !important;
+    font-size: 16px;
+    color: rgb(102, 101, 101);
+    font-weight: 400;
+}
+
+.text-lowongan {
+    margin-top: 5px;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+
+.button-ukuran {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+}
+
+.btn-daftar {
+    border: none !important;
+    background: #52a1eb !important;
+}
+
+@media only screen and (max-width: 1200px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 90px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 998px) {
+    .job {
+        height: auto;
+    }
+    .card {
+        height: auto;
+        cursor: pointer;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        background: #A3DE83;
+        color: white;
+        width: auto;
+    }
+    .button-ukuran {
+        margin-top: 30px;
+        position: static;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 75px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 56px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 40px;
+        object-fit: contain;
+    }
+}

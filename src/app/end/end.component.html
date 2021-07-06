@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col-12">
+            <div class="img-wrap">
+                <img src="../../assets/image/terimakasih.png" alt="">
+            </div>
+            <button class="btn btn-danger btn-lg btn-end" (click)="goLoker()">
+                <i class="fas fa-address-book fa-lg me-2"></i> Loker
+            </button>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8">
+            <div class="card card-pengalaman">
+                <div class="persegi">
+                    <p>Biodata Pelamar </p>
+                </div>
+                <div class="card-body">
+                    <div class="card card-biodata">
+                        <div class="card-body">
+                            <p><strong>Pelamar :</strong> {{get.nama}}</p>
+                            <p><strong>Email :</strong> {{get.email}}</p>
+                            <p><strong>No Telepon :</strong> {{get.noTlp}}</p>
+                            <p><strong>Alamat :</strong> {{get.alamat}}</p>
+                            <p><strong>Tempat Lahir :</strong> {{get.tempatLahir}}</p>
+                            <p><strong>Tanggal Lahir :</strong> {{get.tglLahir | date:'longDate'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-pengalaman">
+                <div class="persegi">
+                    <p>Soal Jawaban </p>
+                </div>
+                <div class="card-body">
+                    <div class="soal">
+                        <ng-container *ngFor="let jawaban of get.detailJawabans">
+                            <div class="card card-soal">
+                                <div class="card-body">
+                                    <p><strong>Pertanyaan :</strong> {{jawaban.pertanyaan}}</p>
+                                    <p><strong>Jawaban :</strong> {{jawaban.jawaban}}</p>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-pengalaman">
+                <div class="persegi">
+                    <p>Pengalaman Kerja</p>
+                </div>
+                <div class="card-body">
+                    <div class="pengalaman">
+                        <ng-container *ngFor="let pengalaman of get.historyPengalamans">
+                            <div class="card card-history">
+                                <div class="card-body">
+                                    <p><strong>Tempat Kerja :</strong> {{pengalaman.tempatKerja}}</p>
+                                    <p><strong>Posisi :</strong> {{pengalaman.posisi}}</p>
+                                    <p><strong>Keterangan :</strong> {{pengalaman.keterangan}}</p>
+                                    <p><strong>Salary :</strong> {{pengalaman.nominal}}</p>
+                                    <p><strong>Tanggal Masuk :</strong> {{pengalaman.tglAwal | date:'longDate'}}</p>
+                                    <p><strong>Tanggal Resign :</strong> {{pengalaman.tglAkhir | date:'longDate'}}</p>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

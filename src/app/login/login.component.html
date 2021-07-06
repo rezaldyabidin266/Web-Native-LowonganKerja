@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-md-around">
+        <div class="col-lg-8">
+            <div class="form-judul">
+                <div class="img-wrapper">
+                    <img class="" src="../../assets/image/login.png" alt="">
+                </div>
+            </div>
+            <div class="alert alert-warning" role="alert" *ngIf="validForm">
+                Harap isi semua form
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="errorLogin">
+                {{errorMessage}}
+            </div>
+            <div *ngIf="createPassword" class="d-flex justify-content-end">
+                <button type="button" routerLink="/createPassword" class="btn btn-warning mb-3" style="cursor: pointer;"><i class="fas fa-key me-2"></i>Buat Password</button>
+            </div>
+            <form action="" [formGroup]="formLogin" (ngSubmit)="onSubmit(formLogin)">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control mb-3" id="email" name="email" formControlName="email" placeholder="email" required>
+                    <label for="email">Email</label>
+                    <span class="help-block " *ngIf="!formLogin.get('email').valid && formLogin.get('email').touched">Tolong masukan email anda !</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control mb-3" id="password" name="password" formControlName="password" placeholder="password" required>
+                    <label for="password">Password</label>
+                    <span class="help-block " *ngIf="!formLogin.get('password').valid && formLogin.get('password').touched">Tolong masukan email password !</span>
+                </div>
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary btn-daftar" type="submit">Log In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

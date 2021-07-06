@@ -1,0 +1,128 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8">
+            <div class="form-upload">
+                <div class="img-wrapper ">
+                    <img class="" src="../../assets/image/pengalaman.png" alt="">
+                </div>
+                <p>Jika anda punya pengalaman kerja harap isi formnya</p>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div *ngFor="let item of respPengalamanToken;">
+                <div class="card mb-3">
+                    <div class="card card-pengalaman">
+                        <div class="card-body">
+                            <h4 class="card-title text-center mb-4"><strong>Pengalaman Kerja</strong> </h4>
+                            <div class="card card-history">
+                                <div class="card-body">
+                                    <p>
+                                        <strong>Tempat Kerja :</strong> {{item.tempatKerja}}
+                                    </p>
+                                    <p>
+                                        <strong>Posisi :</strong> {{item.posisi}}
+                                    </p>
+                                    <p>
+                                        <strong>Keterangan :</strong> {{item.keterangan}}
+                                    </p>
+                                    <p>
+                                        <strong>Salary :</strong> {{item.nominal}}
+                                    </p>
+                                    <p>
+                                        <strong>Tanggal Masuk :</strong> {{item.tglAwal | date:'longDate'}}
+                                    </p>
+                                    <p>
+                                        <strong>Tanggal Resign :</strong> {{item.tglAkhir | date:'longDate'}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngFor="let item of respPengalaman;">
+                <div class="card mb-3">
+                    <div class="card card-pengalaman">
+                        <div class="card-body">
+                            <h4 class="card-title text-center mb-4"><strong>Pengalaman Kerja</strong> </h4>
+                            <div class="card card-history">
+                                <div class="card-body">
+                                    <p>
+                                        <strong>Tempat Kerja :</strong> {{item.tempatKerja}}
+                                    </p>
+                                    <p>
+                                        <strong>Posisi :</strong> {{item.posisi}}
+                                    </p>
+                                    <p>
+                                        <strong>Keterangan :</strong> {{item.keterangan}}
+                                    </p>
+                                    <p>
+                                        <strong>Salary :</strong> {{item.nominal}}
+                                    </p>
+                                    <p>
+                                        <strong>Tanggal Masuk :</strong> {{item.tglAwal | date:'longDate'}}
+                                    </p>
+                                    <p>
+                                        <strong>Tanggal Resign :</strong> {{item.tglAkhir | date:'longDate'}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-lg-6">
+            <form [formGroup]="formPengalaman" (ngSubmit)="addPengalaman()">
+                <div class="banner-pengalaman">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="tempatKerja" name="tempatKerja" formControlName="tempatKerja" placeholder="tempatKerja" required>
+                        <label for="tempatKerja">Tempat Kerja</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="posisi" name="posisi" formControlName="posisi" placeholder="posisi" required>
+                        <label for="posisi">Jabatan/Posisi</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="keterangan" name="keterangan" formControlName="keterangan" placeholder="keterangan" required>
+                        <label for="keterangan">Pengalaman Kerja</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" (keyup)="rupiah($event)" id="salary" name="salary" formControlName="salary" placeholder="salary" required>
+                        <label for="salary">Salary</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="tglMasuk" name="tglMasuk" formControlName="tglMasuk" placeholder="tglMasuk" max="3000-12-31" required>
+                        <label for="tglMasuk">Tanggal Masuk</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="tglAkhir" name="tglAkhir" formControlName="tglAkhir" placeholder="tglAkhir" max="3000-12-31" required>
+                        <label for="tglAkhir">Tanggal Keluar/Resign</label>
+                    </div>
+
+                </div>
+                <div class="d-flex  justify-content-between">
+                    <button class="btn btn-primary me-3" type="submit">Kirim Pengalaman</button>
+                    <button class="btn btn-primary" (click)="postPengalaman()" routerLink='/end'>Selesai <i class="fas fa-paper-plane fa-sm ms-1"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <label for="tempatKerja">Tempat Kerja</label>
+                    <input type="text" id="tempatKerja" name="tempatKerja" formControlName="tempatKerja" class="form-control">
+                    <label for="posisi">Jabatan/Posisi</label>
+                    <input type="text" id="posisi" name="posisi" formControlName="posisi" class="form-control">
+                    <label for="keterangan">Keterangan</label>
+                    <input type="text" id="keterangan" name="keterangan" formControlName="keterangan" class="form-control">
+                    <label for="salary">Salary</label>
+                    <input type="number" id="salary" name="salary" formControlName="salary" class="form-control">
+                    <label for="tglMasuk">Tanggal Masuk</label>
+                    <input type="date" id="tglMasuk" name="tglMasuk" formControlName="tglMasuk" class="form-control">
+                    <label for="tglAkhir">Tanggal Resign/Keluar</label>
+                    <input type="date" id="tglAkhir" name="tglAkhir" formControlName="tglAkhir" class="form-control"> -->

@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row form-daftar justify-content-md-center">
+        <div class="col-lg-10">
+            <div class="form-judul">
+                <div class="img-wrapper ">
+                    <img class="" src="../../assets/image/register.png" alt="">
+                </div>
+            </div>
+            <div class="alert alert-warning" role="alert" *ngIf="validForm">
+                Harap isi semua form
+            </div>
+            <div class="alert alert-success" role="alert" *ngIf="validRegister">
+                {{alertRegister}}
+            </div>
+            <!--Form Daftar-->
+            <form [formGroup]="formDaftar" (ngSubmit)="onSubmit()">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nama" name="nama" formControlName="nama" placeholder="nama" required>
+                    <label for="nama">Nama</label>
+                    <span class="help-block" *ngIf="!formDaftar.get('nama').valid && formDaftar.get('nama').touched">Tolong masukan nama anda !</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" name="email" formControlName="email" placeholder="email" required>
+                    <label for="email">Email</label>
+                    <span class="help-block" *ngIf="!formDaftar.get('email').valid && formDaftar.get('email').touched">Tolong masukan email anda !</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" name="password" formControlName="password" placeholder="password" required>
+                    <label for="password">Password</label>
+                    <span class="help-block" *ngIf="!formDaftar.get('password').valid && formDaftar.get('password').touched">Tolong masukan password anda !</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="alamat" name="alamat" formControlName="alamat" placeholder="alamat" required>
+                    <label for="alamat">Alamat</label>
+                    <span class="help-block" *ngIf="!formDaftar.get('alamat').valid && formDaftar.get('alamat').touched">Tolong masukan alamat anda !</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="tempatLahir" name="tempatLahir" formControlName="tempatLahir" placeholder="tempatLahir" required>
+                    <label for="tempatLahir">Tempat Lahir</label>
+                    <span class="help-block" *ngIf="!formDaftar.get('tempatLahir').valid && formDaftar.get('tempatLahir').touched">Tolong masukan tempat lahir anda !</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="tglLahir" name="tglLahir" formControlName="tglLahir" placeholder="tglLahir" max="3000-12-31" required>
+                    <label for="tglLahir">Tanggal Lahir (hari/bulan/tahun)</label>
+                    <span class="help-block" *ngIf="!formDaftar.get('tglLahir').valid && formDaftar.get('tglLahir').touched">Tolong masukan tanggal lahir (hari/bulan/tahun)</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="noTlp" name="noTlp" formControlName="noTlp" placeholder="noTlp" maxlength="13" required>
+                    <label for="noTlp">Nomor Telepon</label>
+                    <span class="help-block" *ngIf="!formDaftar.get('noTlp').valid && formDaftar.get('noTlp').touched">Tolong masukan nomor telepon anda !</span>
+                </div>
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary btn-daftar" [disabled]="disableTombol" type="submit">Daftar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+/*  */
+
+.container {
+    height: auto;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: 700;
+}
+
+h3 {
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: 400;
+}
+
+.card-pengalaman {
+    margin-bottom: 80px;
+    padding: 2px;
+    border: 2px solid #A3DE83;
+    background: #A3DE83;
+    border-radius: 10px;
+}
+
+.card-history {
+    margin-bottom: 15px;
+    border: 1px solid #8b8b8b;
+    border-radius: 5px;
+}
+
+.card-soal {
+    margin-bottom: 15px;
+    border: 1px solid #8b8b8b;
+    border-radius: 5px;
+}
+
+.card-biodata {
+    margin-bottom: 15px;
+    border: 1px solid #8b8b8b;
+    border-radius: 5px;
+}
+
+.card-title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: 1.8rem;
+    font-family: 'Lora', serif;
+}
+
+.soal {
+    height: 400px;
+    overflow: scroll;
+}
+
+.pengalaman {
+    height: 400px;
+    overflow: scroll;
+}
+
+p strong {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+img {
+    display: block;
+}
+
+.btn-end {
+    margin-top: 50px;
+    border: none !important;
+    background: #52a1eb !important;
+    margin-bottom: 80px;
+}
+
+.persegi {
+    width: 55%;
+    height: 50px;
+    margin: 0 auto;
+    background: #FF5D6E;
+    border-radius: 20px;
+    margin-top: -30px;
+    padding-top: 4.5px;
+}
+
+.persegi p {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.7rem;
+}
+
+.img-wrap {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.img-wrap img {
+    height: 500px;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    .img-wrap img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 400px;
+        object-fit: contain;
+    }
+    .persegi {
+        width: 55%;
+    }
+    .persegi p {
+        font-size: 1.7rem;
+    }
+}
+
+@media only screen and (max-width: 998px) {
+    .img-wrap img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .img-wrap img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 220px;
+        object-fit: contain;
+    }
+    .persegi {
+        width: 80%;
+    }
+    .persegi p {
+        font-size: 1.7rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .img-wrap img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 160px;
+        object-fit: contain;
+    }
+    .persegi {
+        width: 90%;
+        padding-top: 5.5px;
+    }
+    .persegi p {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width:370px) {
+    .persegi {
+        width: 90%;
+        padding-top: 6.5px;
+    }
+    .persegi p {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .img-wrap img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 120px;
+        object-fit: contain;
+    }
+    .persegi {
+        width: 93%;
+        padding-top: 10px;
+    }
+    .persegi p {
+        font-size: 1.1rem;
+    }
+}

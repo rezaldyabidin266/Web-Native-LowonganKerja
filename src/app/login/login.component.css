@@ -1,0 +1,65 @@
+.container {
+    height: 100vh;
+}
+
+img {
+    display: block;
+}
+
+.form-judul {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.btn-daftar {
+    border: none !important;
+    background: #52a1eb !important;
+}
+
+.img-wrapper {
+    width: 100%;
+}
+
+.img-wrapper img {
+    margin: auto;
+    height: 90px;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 1200px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 78px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 998px) {}
+
+@media only screen and (max-width: 767px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 65px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 55px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .img-wrapper img {
+        margin: auto;
+        height: 45px;
+        object-fit: contain;
+    }
+}
